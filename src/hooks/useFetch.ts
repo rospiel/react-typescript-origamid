@@ -1,11 +1,6 @@
 import React from "react"
 
-type UseFetchProps = {
-    url: RequestInfo | URL
-    options?: RequestInit
-} 
-
-export default function useFetch<Response>({ url, options }: UseFetchProps) {
+export default function useFetch<Response>(url: RequestInfo | URL, options?: RequestInit) {
     const [data, setData] = React.useState<Response | null>(null)
     const [loading, setLoading] = React.useState(false)
     const [error, setError] = React.useState<string | null>(null)
@@ -36,7 +31,7 @@ export default function useFetch<Response>({ url, options }: UseFetchProps) {
                 if (!responseCall.ok) {
                     throw new Error(`Error: ${responseCall.status}`)
                 }
-                
+
                 const json = (await responseCall.json()) as Response
                 
                 if (nonAborted(controller)) {
