@@ -1,7 +1,13 @@
-import React from "react"
+import Months from "./Months"
+import DateRange from "./dateRange/DateRange"
 
 export default function Header(): JSX.Element {
     return (
-        <h1>Header</h1>
+        <header className='mb'>
+            <div className='mb'>
+                <DateRange />
+            </div>
+            <Months />
+        </header>
     )
 }

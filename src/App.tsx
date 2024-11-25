@@ -6,7 +6,7 @@ import Summary from "./pages/Summary";
 
 function App() {
   return (
-    <>
+    <div className='container'>
       <MainContextProvider>
         <Sidenav />
         <main>
@@ -14,7 +14,7 @@ function App() {
           <Summary />
         </main>
       </MainContextProvider>
-    </>
+    </div>
   )
 }
 
