@@ -1,3 +1,3 @@
 export enum SaleStatusEnum {
-    PAID = "Paid", PROCESSING = "Processing", FAILED = "Failed"
+    PAID = "PAID", PROCESSING = "PROCESSING", FAILED = "FAILED"
 }
