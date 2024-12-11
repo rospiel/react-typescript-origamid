@@ -47,32 +47,25 @@ export default function Summary(): JSX.Element {
 
         return () => setSummary(initialSummaryState())
     }, [data])
+
+    function buildSection(title: string, totals: string): JSX.Element {
+        return (
+            <div className="box">
+                <h2>{title}</h2>
+                <span>
+                    {totals}
+                </span>
+            </div>
+        )
+
+    }
     
     return (
         <section>
             <div className="resumo flex mb">
-                <div className="box">
-                <h2>Sales</h2>
-                <span>
-                    {summary.totalSales.toLocaleString(EN_US, USD)}
-                </span>
-                </div>
-                <div className="box">
-                <div>
-                    <h2>Received</h2>
-                    <span>
-                        {summary.totalReceived.toLocaleString(EN_US, USD)}
-                    </span>
-                </div>
-                </div>
-                <div className="box">
-                <div>
-                    <h2>Processing</h2>
-                    <span>
-                        {summary.totalProcessing.toLocaleString(EN_US, USD)}
-                    </span>
-                </div>
-                </div>
+                {buildSection('Sales', summary.totalSales.toLocaleString(EN_US, USD))}
+                {buildSection('Received', summary.totalReceived.toLocaleString(EN_US, USD))}
+                {buildSection('Processing', summary.totalProcessing.toLocaleString(EN_US, USD))}
             </div>
             <div className="box">Gráficos</div>
         </section>
