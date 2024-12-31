@@ -8,7 +8,8 @@ export function dateToString(date: Date): string {
 
 export function getMonthName(month: number) {
     const date = new Date();
-    date.setMonth(date.getMonth() + month);
+    date.setDate(1);
+    date.setMonth(month);
     return new Intl.DateTimeFormat('en-US', {
         month: 'long',
     }).format(date);
