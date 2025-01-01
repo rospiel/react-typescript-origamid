@@ -4,7 +4,7 @@ const generalStyle: React.CSSProperties = {
     padding: 'var(--gap-s) .75rem',
     backgroundColor: 'var(--color-4)',
     borderRadius: 'var(--gap)',
-  }
+}
   
 const labelStyle: React.CSSProperties = {
     ...generalStyle,

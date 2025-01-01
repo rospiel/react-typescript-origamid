@@ -73,4 +73,11 @@ ul {
     display: grid;
     padding: var(--gap);
     gap: var(--gap);
+    grid-template-columns: 240px auto;
+}
+
+.daterange {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap)
 }

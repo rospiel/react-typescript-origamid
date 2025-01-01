@@ -1,0 +1,28 @@
+.sidenav li {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-s);
+}
+  
+.sidenav li span {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--gap);
+    background: var(--color-4);
+}
+
+.sidenav li:hover span {
+    background: var(--color-3);
+}
+  
+.sidenav li a {
+    flex: 1;
+    color: var(--color-1);
+    font-size: 1.125rem;
+    text-decoration: none;
+    padding: var(--gap-s) 0;
+}
+  

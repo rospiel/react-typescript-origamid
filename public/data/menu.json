@@ -1,0 +1,26 @@
+[
+   {
+      "name":"Summary",
+      "description":"summary"
+   },
+   {
+      "name":"Sales",
+      "description":"sales"
+   },
+   {
+      "name":"Webhooks",
+      "description":"webhooks"
+   },
+   {
+      "name":"Settings",
+      "description":"settings"
+   },
+   {
+      "name":"Contact us",
+      "description":"contact us"
+   },
+   {
+      "name":"Log out",
+      "description":"log out"
+   }
+]
