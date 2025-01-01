@@ -10,6 +10,7 @@ import settingsIcon from '../../assets/icons/configuracoes.svg';
 import contactUsIcon from '../../assets/icons/contato.svg';
 import logOutIcon from '../../assets/icons/sair.svg';
 import './sidenav.css'
+import { NavLink } from "react-router-dom";
 
 export default function Sidenav(): JSX.Element {
     const { data } = useMainContext()
@@ -48,7 +49,7 @@ export default function Sidenav(): JSX.Element {
                         <span>
                             <img src={icons.get(option.name)} alt={option.description} />
                         </span>
-                        <a href="#">{option.name}</a>
+                        <NavLink to="/">{option.name}</NavLink>
                     </li>
                 ))}
             </ul>

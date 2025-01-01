@@ -12,6 +12,7 @@ export default function ButtonMonth({numberMonth}: ButtonMonthProps): JSX.Elemen
     function setStartAndEnd(): void {
         const date = new Date();
         date.setDate(1);
+        date.setFullYear(2024);
         date.setMonth(numberMonth);
         const firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
         const lastDay = new Date(date.getFullYear(), date.getMonth() + 1, 0);

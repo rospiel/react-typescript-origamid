@@ -1,3 +1,4 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./Style.css"
 import Header from "./components/Header";
 import Sidenav from "./components/sidenav/Sidenav"
@@ -7,13 +8,17 @@ import Summary from "./pages/Summary";
 function App() {
   return (
     <div className='container'>
-      <MainContextProvider>
-        <Sidenav />
-        <main>
-          <Header />
-          <Summary />
-        </main>
-      </MainContextProvider>
+      <BrowserRouter>
+        <MainContextProvider>
+          <Sidenav />
+          <main>
+            <Header />
+            <Routes>
+              <Route path="/" element={<Summary />} />
+            </Routes>
+          </main>
+        </MainContextProvider>
+      </BrowserRouter>
     </div>
   )
 }
