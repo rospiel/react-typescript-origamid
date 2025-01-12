@@ -1,6 +1,8 @@
+import "./summary.css"
 import React, { useEffect, useState } from "react"
 import { useMainContext } from "../contexts/MainContext"
 import { SaleStatusEnum } from "../enums/SaleStatusEnum"
+import Loading from "../components/loading/Loading"
 
 type SummaryState = {
     totalSales: number
@@ -38,7 +40,7 @@ export default function Summary(): JSX.Element {
     operations.set(SaleStatusEnum.FAILED.valueOf(), (price: number) => {})
 
     const [summary, setSummary] = useState<SummaryState>(initialSummaryState())
-    const { data } = useMainContext()
+    const { data, loading } = useMainContext()
     
     useEffect(() => {
         data?.filter((info) => {
@@ -49,6 +51,10 @@ export default function Summary(): JSX.Element {
     }, [data])
 
     function buildSection(title: string, totals: string): JSX.Element {
+        if (loading) {
+            return <div className="summaryContainerLoading"><Loading /></div>
+        }
+        
         return (
             <div className="box">
                 <h2>{title}</h2>
