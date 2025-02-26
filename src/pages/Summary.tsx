@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react"
 import { useMainContext } from "../contexts/MainContext"
 import { SaleStatusEnum } from "../enums/SaleStatusEnum"
 import Loading from "../components/loading/Loading"
+import SalesGraph from "../components/salesGraph/SalesGraph"
 
 type SummaryState = {
     totalSales: number
@@ -68,12 +69,12 @@ export default function Summary(): JSX.Element {
     
     return (
         <section>
-            <div className="resumo flex mb">
+            <div className="summaryContainer flex mb">
                 {buildSection('Sales', summary.totalSales.toLocaleString(EN_US, USD))}
                 {buildSection('Received', summary.totalReceived.toLocaleString(EN_US, USD))}
                 {buildSection('Processing', summary.totalProcessing.toLocaleString(EN_US, USD))}
             </div>
-            <div className="box">Gráficos</div>
+            <div className="box"><SalesGraph /></div>
         </section>
     )
 
